@@ -1,0 +1,312 @@
+:root {
+  --main-color: #0e2133;
+  --nav-color: #095ead;
+}
+
+a[target='_blank']:after {
+  content: '\1F5D7'
+}
+
+a {
+  color: #fff;
+}
+
+h2 {
+  color: #fff;
+}
+
+/*
+  Hides Sitecore editor markup,
+  if you run the app in connected mode while the Sitecore cookies
+  are set to edit mode.
+*/
+.scChromeData, .scpm { display: none !important; }
+
+/*
+  Styles for default JSS error components
+*/
+.sc-jss-editing-error,
+.sc-jss-placeholder-error {
+  padding: 1em;
+  background-color: lightyellow;
+}
+
+/* 
+  Style for default content block
+*/
+.contentTitle {
+    font-size: 3.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;  
+  color: #fff; 
+  background-color: white;   
+}
+
+.container {
+  background-color: var(--main-color);
+  margin: 0 auto;
+  max-width: 1580px;
+}
+
+header {
+  background-color: var(--nav-color);
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+}
+
+header nav {
+  float: right;
+}
+
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+header nav li {
+  margin-left: 20px;
+}
+
+header nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+header nav a:hover {
+  color: #ccc;
+}
+
+aside {
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+}
+
+nav a {
+  margin-right: 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+form {
+  display: flex;
+  align-items: center;
+}
+
+input[type="text"] {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+}
+
+button[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.recent-jobs-container {
+  display: flex;
+  justify-content: flex-start;
+  /* align-items: center;
+  flex-wrap: wrap; */
+}
+.recent-job-box {
+  width: 30%;
+  margin: 20px;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  border-color: #fff;
+}
+
+.recent-job-box:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}
+  
+  .recent-job-box img {
+  width: 100%;
+  margin-bottom: 10px;
+  }
+  
+  .recent-job-box h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+  
+  
+
+.featured-jobs-container {
+  display: flex;
+  justify-content: flex-start;
+  /* align-items: flex-start;
+  flex-wrap: wrap; */
+}
+
+.featured-job {
+  width: 30%;
+  margin: 20px;
+  text-align: center;
+}
+
+.featured-job:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}
+
+/* Example 2: Using a different font weight and color */
+.featured-job h3 {
+  font-weight: bold;
+  color: #ff0;
+}
+
+
+/* Example 3: Using a different border */
+.featured-job {
+  border: 2px solid #ff0;
+}
+
+/* Example 4: Using a different box shadow */
+.featured-job {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.featured-job img {
+  width: 100%;
+}
+
+
+#featured-jobs, #recent-jobs, #job-listing {
+  margin: 20px 0;
+}
+
+#featured-jobs h2, #recent-jobs h2, #job-listing h2 {
+  margin-bottom: 10px;
+}
+
+#featured-jobs li, #recent-jobs li, #job-listing li {
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+#featured-jobs a, #recent-jobs a {
+  text-decoration: none;
+  color: #4CAF50;
+}
+
+footer {
+  background-color: #f5f5f5;
+  padding: 10px;
+  text-align: center;
+}
+
+.view-jobs-btn {
+  background-color: var(--main-color);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  margin-top: 10px;
+  border-color: var(--main-color);
+}
+
+.view-job-btn:hover {
+  background-color: #fff;
+  color: var(--main-color);
+}
+
+.job-category {
+  width: 25%;
+  text-align: center;
+  margin: 10px;
+}
+
+.job-category img {
+  width: 100%;
+}
+
+
+.job-listing-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.job-listing-box {
+  width: 30%;
+  margin: 20px;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  border-color: #fff;
+}
+
+footer > p {
+  color: #4CAF50;
+}
+
+.job-listing-box:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  cursor: pointer;  
+}
+
+.job-listing-box img {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.job-listing-box h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+
+
+@media screen and (max-width: 768px) {
+  /* styles for screens with width less than or equal to 768px */
+    main {
+        flex-wrap: wrap;
+    }
+    section {
+        width: 100%;
+    }
+}

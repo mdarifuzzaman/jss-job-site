@@ -23,10 +23,11 @@ const Layout = ({ layoutData }: LayoutProps): JSX.Element => {
     <>
       <Head>
         <title>{route?.fields?.pageTitle?.value || 'Page'}</title>
-        <link rel="icon" href={`${publicUrl}/favicon.ico`} />
+        <link rel="icon" href={`${publicUrl}/favicon.ico`} /> 
         <script src={`${publicUrl}/scripts/moosend.js`}></script>
-        <script src={`${publicUrl}/scripts/moosend_subs.js`}></script>
+        <script src={`${publicUrl}/scripts/moosend_subs.js`}></script>       
       </Head>
+      
 
       {/*
         VisitorIdentification is necessary for Sitecore Analytics to determine if the visitor is a robot.
@@ -38,7 +39,7 @@ const Layout = ({ layoutData }: LayoutProps): JSX.Element => {
       <VisitorIdentification />
 
       <Navigation />
-      
+
       {/* root placeholder for the app, which we add components to using route data */}
       <div className="container">{route && <Placeholder name="jss-main" rendering={route} />}</div>
       <footer>

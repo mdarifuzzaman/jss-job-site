@@ -12,8 +12,6 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'nprogress/nprogress.css';
 import 'assets/app.css';
 
-
-
 NProgress.configure({ showSpinner: false, trickleSpeed: 100 });
 
 Router.events.on('routeChangeStart', () => NProgress.start());
@@ -21,7 +19,7 @@ Router.events.on('routeChangeComplete', () => NProgress.done());
 Router.events.on('routeChangeError', () => NProgress.done());
 
 function App({ Component, pageProps }: AppProps<SitecorePageProps>): JSX.Element {
-  const { dictionary, ...rest } = pageProps; 
+  const { dictionary, ...rest } = pageProps;
   return (
     // Use the next-localization (w/ rosetta) library to provide our translation dictionary to the app.
     // Note Next.js does not (currently) provide anything for translation, only i18n routing.

@@ -1,38 +1,38 @@
-import { Text, Field, withDatasourceCheck, constants, GraphQLRequestClient } from '@sitecore-jss/sitecore-jss-nextjs';
-import { ComponentProps } from 'lib/component-props';
+import {
+  withDatasourceCheck,
+  constants,
+  GraphQLRequestClient,
+} from '@sitecore-jss/sitecore-jss-nextjs';
 import Script from 'next/script';
 import { useEffect, useState } from 'react';
 import config from 'temp/config';
 
-type JobDetailsProps = ComponentProps & {
-  fields: {
-    heading: Field<string>;
-  };
-};
-
-const JobDetails = (props: JobDetailsProps): JSX.Element => {
-  const [data, setData] = useState({search: {results: []}});
+const JobDetails = (): JSX.Element => {
+  const [data, setData] = useState({ search: { results: [] } });
   useEffect(() => {
     getData();
-    async function getData () {
-      var d = await getSearchData();
-      setData(d);      
-    const job = data?.search?.results;
-    console.log('specific - job ', job);
+    async function getData() {
+      const d = await getSearchData();
+      setData(d);
+      const job = data?.search?.results;
+      console.log('specific - job ', job);
     }
   }, []);
-    return (
-      <div>
-        <Script dangerouslySetInnerHTML={{__html: `mootrack('Pageview: Job Details with ID: Test Page')`}}></Script>
-        <p>JobDetails Component</p>
-        {/* <Text field={props.fields.heading} /> */}
-        {JSON.stringify(data)}
-      </div>
-    );
-  }
+  return (
+    <div>
+      <Script
+        id="moosend_track"
+        dangerouslySetInnerHTML={{ __html: `mootrack('Pageview: Job Details with ID: Test Page')` }}
+      ></Script>
+      <p>JobDetails Component</p>
+      {/* <Text field={props.fields.heading} /> */}
+      {JSON.stringify(data)}
+    </div>
+  );
+};
 
-const getSearchData  = async () => {
-  console.log("Inside server side props..");
+const getSearchData = async () => {
+  console.log('Inside server side props..');
   if (process.env.JSS_MODE === constants.JSS_MODE.DISCONNECTED) {
     return null;
   }
@@ -81,9 +81,8 @@ const getSearchData  = async () => {
   }`;
 
   const result = await graphQLClient.request<any>(query);
-  console.log("Job details result", result);
+  console.log('Job details result', result);
   return result;
 };
 
-
-export default withDatasourceCheck()<JobDetailsProps>(JobDetails);
+export default withDatasourceCheck()(JobDetails);

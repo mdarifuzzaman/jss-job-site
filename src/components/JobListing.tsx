@@ -23,17 +23,27 @@ const JobListing = (props: JobListingProps): JSX.Element => {
 
   return (
     <main>
-      <Script dangerouslySetInnerHTML={{__html: `mootrack('identify', 'arif@test.com', 'Arif uzzaman')`}}></Script>
+      <Script
+        id="moosend_identify"
+        dangerouslySetInnerHTML={{
+          __html: `mootrack('identify', 'arif@test.com', 'Arif uzzaman')`,
+        }}
+      ></Script>
       <section id="job-listing">
         <h2>Job Listing</h2>
         <div className="job-listing-container">
-        <Script dangerouslySetInnerHTML={{__html: `mootrack('Pageview: Job Details with ID: Job Listing page visited')`}}></Script>
+          <Script
+            id="moosend_track"
+            dangerouslySetInnerHTML={{
+              __html: `mootrack('Pageview: Job Details with ID: Job Listing page visited')`,
+            }}
+          ></Script>
           {allJobs &&
             allJobs.map((fj: any) => (
               <div key={fj.displayName} className="job-listing-box">
                 <div className="job-listing-box-content">
                   {/* <img src="job1.jpg" alt="job1" /> */}
-                 <div
+                  <div
                     dangerouslySetInnerHTML={{
                       __html: fj.fields.filter((field: any) => field.name === 'Title')[0].jsonValue
                         ?.value,
@@ -54,18 +64,26 @@ const JobListing = (props: JobListingProps): JSX.Element => {
                   <p>
                     {fj.fields.filter((field: any) => field.name === 'JobType')[0].jsonValue?.value}
                   </p>
-                  <a href={"/job?jobId=" + fj.id} className="view-job-btn">
+                  <a href={'/job?jobId=' + fj.id} className="view-job-btn">
                     View Job
                   </a>
                   <input type={'hidden'} value={fj.id}></input>
-                  </div>
+                </div>
               </div>
             ))}
         </div>
-      </section>    
+      </section>
       <article>
-        <h3><a data-mooform-id="ebb65c8c-5c8e-41fd-a8e7-f56dd75f7cd5" href="https://mdar.m-pages.com/U3LbsB/subscribe-to-get-job-notification">Subscribe</a> Us</h3>
-      </article>  
+        <h3>
+          <a
+            data-mooform-id="ebb65c8c-5c8e-41fd-a8e7-f56dd75f7cd5"
+            href="https://mdar.m-pages.com/U3LbsB/subscribe-to-get-job-notification"
+          >
+            Subscribe
+          </a>{' '}
+          Us
+        </h3>
+      </article>
     </main>
   );
 };

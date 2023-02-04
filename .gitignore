@@ -12,8 +12,8 @@
 
 # graphql code generation
 /.generated
-*.graphql.d.ts
-*.graphqls.d.ts
+# *.graphql.d.ts
+# *.graphqls.d.ts
 
 # misc
 .DS_Store
